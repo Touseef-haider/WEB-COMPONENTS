@@ -15,23 +15,32 @@ const Mapper = () => {
 
     }
 
-    useEffect(()=>{
+    const handleSpot=(e)=>{
+        let mouseX = e.pageX;
+        let mouseY = e.pageY;
+        var color = '#0057ff';
 
-        document.body.addEventListener('onClick',handleBodyClick)
-        
-        return ()=>{
-            document.body.removeEventListener('onClick',handleBodyClick)
-        } 
-    },[])
-
-    const handleBodyClick = (e) =>{
-        console.log(e)
+        var size = '13px';
+        let div = window.document.createElement('div')
+        div.style.position = 'absolute';
+        div.style.top = `${mouseY}px`;
+        div.style.left = `${mouseX}px`;
+        div.style.height = size;
+        div.style.zIndex = 1;
+        div.style.borderRadius = '50%';
+        div.style.width = size;
+        div.style.backgroundColor = color;
+        window.document.body.appendChild(div)
+       
     }
 
+    
     return (
         <>
 
-        <ImageMapper src={Car} map={MAP} onClick={(e)=>handleClick(e)}/> 
+        <div className="mapper" onClick={handleSpot}>
+            <ImageMapper src={Car} map={MAP} onClick={(e)=>handleClick(e)}/> 
+        </div>
 
         </>
     )

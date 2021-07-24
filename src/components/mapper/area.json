@@ -259,7 +259,7 @@
       ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "24",
       "title": "right back mirror",
       "shape": "poly",
       "name": "5",
@@ -269,7 +269,7 @@
         311,439,322,418,312,442,340,444,378,448,359,444,368,445,385,446,384,434,384,423,381,416,369,413,355,412,340,414,328,414,321,425]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "25",
       "title": "right front mirror",
       "shape": "poly",
       "name": "5",
@@ -280,7 +280,7 @@
         ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "26",
       "title": "left front mirror",
       "shape": "poly",
       "name": "5",
@@ -291,7 +291,7 @@
         ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "27",
       "title": "left back mirror",
       "shape": "poly",
       "name": "5",
@@ -302,7 +302,7 @@
         ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "28",
       "title": "left front door",
       "shape": "poly",
       "name": "5",
@@ -313,7 +313,7 @@
         ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "29",
       "title": "left back mirror neighbour",
       "shape": "poly",
       "name": "5",
@@ -324,7 +324,7 @@
         ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "30",
       "title": "left front bumper up",
       "shape": "poly",
       "name": "5",
@@ -336,7 +336,7 @@
     },
     
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "31",
       "title": "right front bottom bumper",
       "shape": "poly",
       "name": "5",
@@ -346,7 +346,7 @@
     ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "32",
       "title": "left front bumper complex",
       "shape": "poly",
       "name": "5",
@@ -357,7 +357,7 @@
     ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "33",
       "title": "right back bumper mirror",
       "shape": "poly",
       "name": "5",
@@ -368,7 +368,7 @@
     ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "34",
       "title": "right back bumper",
       "shape": "poly",
       "name": "5",
@@ -379,7 +379,7 @@
     ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "35",
       "title": "right back bumper",
       "shape": "poly",
       "name": "5",
@@ -390,7 +390,7 @@
     ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "36",
       "title": "left side mirror",
       "shape": "poly",
       "name": "5",
@@ -401,7 +401,7 @@
     ]
     },
     {
-      "id": "469f9800-c45a-483f-b13e-bd24f3fb79f9",
+      "id": "37",
       "title": "right side mirror",
       "shape": "poly",
       "name": "5",

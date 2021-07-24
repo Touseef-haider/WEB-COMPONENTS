@@ -104,7 +104,6 @@ const TableComponent = () => {
       setData(data)
       setPagination({
         ...params.pagination,
-          total: 100,
       })
       
     });
@@ -126,7 +125,6 @@ const TableComponent = () => {
       setData(data)
       setPagination({
         ...params.pagination,
-          total: 100,
       })
       
     });
@@ -154,7 +152,6 @@ const TableComponent = () => {
       setData(data)
       setPagination({
         ...params.pagination,
-          total: 100,
       })
       
     });
@@ -190,7 +187,6 @@ const TableComponent = () => {
 
       setPagination({
           ...params.pagination,
-          total:100
       })
 
         
@@ -214,7 +210,6 @@ const TableComponent = () => {
         setData(results.data)
         setPagination({
           ...params.pagination,
-            total: 100,
         })
       }else{
         setData(filerData)
@@ -291,7 +286,6 @@ const TableComponent = () => {
                   onChange={handleTableChange}
               />
               <p class="pagination-show">
-                Showing {show.current ? show.current : 1 } - {show.pageSize ? show.pageSize : 10} of {show.total ? show.total :100}
               </p>
            
           </div>

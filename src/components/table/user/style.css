@@ -183,6 +183,7 @@
 #user-btn{
     border-radius: 10px !important;
     background-color: #0057ff;
+    font-weight: bold;
     color: #fff !important;
     border: none;
 }
@@ -207,4 +208,9 @@
 
 .ant-card-bordered {
     border:none !important;
+}
+
+.add-col{
+    display:flex !important;
+    justify-content:flex-end !important; 
 }

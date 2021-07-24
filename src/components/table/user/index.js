@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Select, Radio } from 'antd';
 import './style.css'
 import { SearchOutlined } from '@ant-design/icons'
+import { useQuery } from 'react-query';
 
 const { Option } = Select;
 
@@ -29,10 +30,10 @@ const columns = [
 
 
 const Users = () => {
+  
   const [data,setData] = useState([])
   const [filerData,setFilterData] = useState([])
   const [show,setShow] = useState({})
-  const [fromDate,setFromDate] = useState(null)
   const [pagination,setPagination] = useState({
     current: 1,
     pageSize: 10,
@@ -54,9 +55,7 @@ const Users = () => {
       pagination,
       ...filters,
     });
-    setShow({
-      ...pagination
-    })
+    setShow(pagination)
   };
 
   const fetch = (params = {}) => {
@@ -65,10 +64,10 @@ const Users = () => {
       url: 'http://localhost:8080/api/profile/getProfiles',
       method: 'get',
       type: 'json',
-      data:  {
-        pageSize: params.pageSize,
-        current: params.current,
-      },
+      // data:  {
+      //   pageSize: params.pageSize,
+      //   current: params.current,
+      // },
     }).then(data => {
       console.log(data);
       setLoading(false)
@@ -77,7 +76,7 @@ const Users = () => {
 
       setPagination({
           ...params.pagination,
-          total:200
+          total:100
       })
 
         
@@ -101,7 +100,7 @@ const Users = () => {
         setData(results.data)
         setPagination({
           ...params.pagination,
-            total: 200,
+            total: 100,
         })
       }else{
         setData(filerData)
@@ -117,20 +116,12 @@ const Users = () => {
         <Col span={6}>
           <h2>System / Users</h2>
         </Col>
-        <Col span={18}>
-          <Row>
-            <Col className="header-inputs" span={9}></Col>
-            <Col className="header-inputs" span={10}>
-              {/* <Input prefix={<SearchOutlined id="import-icon"/>} onChange={handleSearch} placeholder="search..." id="search" style={{width:'100%'}} /> */}
-            </Col>
-            <Col className="header-inputs" span={5}>
-              <Button style={{width:"100%"}} id="user-btn">
+        <Col className="add-col" span={18}>
+
+              <Button className="input-height" id="user-btn">
                 Add new User
               </Button>
-            </Col>
-            
-          </Row>
-    
+   
         </Col>
   
       </Row>
@@ -140,13 +131,14 @@ const Users = () => {
               <Table
                   sticky={false}
                   columns={columns}
+                  showPageSizeOptionsWithPageAppended={false}
                   dataSource={data}
                   pagination={pagination}
                   loading={loading}
                   onChange={handleTableChange}
               />
               <p class="pagination-show">
-                Showing {show.current ? show.current : 1 } - {show.pageSize ? show.pageSize : 10} of {show.total ? show.total :200}
+                Showing {show.current ? show.current : 1 } - {show.pageSize ? show.pageSize : 10} of {show.total ? show.total :100}
               </p>
            
           </div>

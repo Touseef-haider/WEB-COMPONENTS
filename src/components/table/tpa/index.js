@@ -95,7 +95,7 @@ const TPA = () => {
 
       setPagination({
           ...params.pagination,
-          total:200
+          total:100
       })
 
         
@@ -119,7 +119,7 @@ const TPA = () => {
         setData(results.data)
         setPagination({
           ...params.pagination,
-            total: 200,
+            total: 100,
         })
       }else{
         setData(filerData)
@@ -136,13 +136,13 @@ const TPA = () => {
           <h2>TPA</h2>
         </Col>
         <Col span={18}>
-          <Row>
-            <Col className="header-inputs" span={9}></Col>
-            <Col className="header-inputs" span={10}>
-              <Input prefix={<SearchOutlined id="tpa-icon"/>} onChange={handleSearch} placeholder="search..." id="search" style={{width:'100%'}} />
+          <Row >
+            <Col md={9} ></Col>
+            <Col className="header-inputs"  md={10}>
+              <Input className="input-height" prefix={<SearchOutlined id="tpa-icon"/>} onChange={handleSearch} placeholder="search..." id="search" style={{width:'100%'}} />
             </Col>
-            <Col className="header-inputs" span={5}>
-              <Button style={{width:"100%"}} id="tpa-btn">
+            <Col className="header-inputs"  md={5}>
+              <Button className="input-height" style={{width:'100%'}} id="tpa-btn">
                 Add new TPA
               </Button>
             </Col>
@@ -160,10 +160,11 @@ const TPA = () => {
                   dataSource={data}
                   pagination={pagination}
                   loading={loading}
+                  showPageSizeOptionsWithPageAppended={false}
                   onChange={handleTableChange}
               />
               <p class="pagination-show">
-                Showing {show.current ? show.current : 1 } - {show.pageSize ? show.pageSize : 10} of {show.total ? show.total :200}
+                Showing {show.current ? show.current : 1 } - {show.pageSize ? show.pageSize : 10} of {show.total ? show.total :100}
               </p>
            
           </div>

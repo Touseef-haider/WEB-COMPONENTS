@@ -15,67 +15,56 @@ const columns = [
     title: 'DD USER',
     // dataIndex: 'first_name',
     render: x => `${x.personal_info.first_name} `,
-    width: '10%',
   },
   {
     title: 'DD Claim #',
     // dataIndex: 'first_name',
     render: x => `${x.dd_claim_number} `,
-    width: '10%',
   },
   {
     title: 'TPA Claim #',
     // dataIndex: 'first_name',
     render: x => `${x.insurance_claim_number} `,
-    width: '10%',
   },
   {
     title: 'FIRST NAME',
     // dataIndex: 'first_name',
     render: x => `${x.personal_info.first_name} `,
-    width: '10%',
   },
   {
     title: 'LAST NAME',
     // dataIndex: 'first_name',
     render: x => `${x.personal_info.last_name} `,
-    width: '50% !important',
   },
   {
     title: 'CITY',
     // dataIndex: 'first_name',
     render: x => `${x.personal_info.city} `,
-    width: '10%',
   },
   {
     title: 'ST',
     // dataIndex: 'first_name',
     render: x => `${x.personal_info.state} `,
-    width: '10%',
   },
   {
     title: 'ZIP',
     // dataIndex: 'first_name',
     render: x => `${x.personal_info.zip_code} `,
-    width: '10%',
   },
   {
     title: 'PHONE 1',
     // dataIndex: 'first_name',
     render: x => `${x.personal_info.phone} `,
-    width: '10%',
   },
   {
     title: 'PHONE 2',
     // dataIndex: 'first_name',
     render: x => `${x.personal_info.secondary_phone} `,
-    width: '10%',
   },
   {
     title: 'EMAIL',
     // dataIndex: 'first_name',
     render: x => `${x.personal_info.email} `,
-    width: '10%',
   },
  ,
 ];
@@ -115,7 +104,7 @@ const TableComponent = () => {
       setData(data)
       setPagination({
         ...params.pagination,
-          total: 200,
+          total: 100,
       })
       
     });
@@ -137,7 +126,7 @@ const TableComponent = () => {
       setData(data)
       setPagination({
         ...params.pagination,
-          total: 200,
+          total: 100,
       })
       
     });
@@ -165,7 +154,7 @@ const TableComponent = () => {
       setData(data)
       setPagination({
         ...params.pagination,
-          total: 200,
+          total: 100,
       })
       
     });
@@ -201,7 +190,7 @@ const TableComponent = () => {
 
       setPagination({
           ...params.pagination,
-          total:200
+          total:100
       })
 
         
@@ -225,7 +214,7 @@ const TableComponent = () => {
         setData(results.data)
         setPagination({
           ...params.pagination,
-            total: 200,
+            total: 100,
         })
       }else{
         setData(filerData)
@@ -245,17 +234,17 @@ const TableComponent = () => {
         <Col span={18}>
           <Row>
             <Col className="header-inputs" span={2}></Col>
-            <Col className="header-inputs" span={12}>
-              <Input prefix={<SearchOutlined id="import-icon"/>} onChange={handleSearch} placeholder="search..." id="search" style={{width:'100%'}} />
+            <Col className="header-inputs" xs={24} md={12}>
+              <Input className="input-height" prefix={<SearchOutlined id="import-icon"/>} onChange={handleSearch} placeholder="search..." id="search" style={{width:'100%'}} />
             </Col>
-            <Col className="header-inputs" span={5}>
-              <Button style={{width:"100%"}} id="import-btn">
+            <Col className="header-inputs" xs={12} md={5}>
+              <Button className="input-height" style={{width:"100%"}} id="import-btn">
                 <img src={ImportIcon} />
                 Import
               </Button>
             </Col>
-            <Col className="header-inputs"  span={5}>
-              <Button style={{width:"100%"}} id="import-btn">
+            <Col className="header-inputs" xs={12} md={5}>
+              <Button className="input-height" style={{width:"100%"}} id="import-btn">
                 <img height="20" src={ExportIcon} />
                 Import
               </Button>
@@ -297,11 +286,12 @@ const TableComponent = () => {
                   columns={columns}
                   dataSource={data}
                   pagination={pagination}
+                  
                   loading={loading}
                   onChange={handleTableChange}
               />
               <p class="pagination-show">
-                Showing {show.current ? show.current : 1 } - {show.pageSize ? show.pageSize : 10} of {show.total ? show.total :200}
+                Showing {show.current ? show.current : 1 } - {show.pageSize ? show.pageSize : 10} of {show.total ? show.total :100}
               </p>
            
           </div>

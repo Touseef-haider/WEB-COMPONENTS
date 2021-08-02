@@ -1,0 +1,34 @@
+.css-1okebmr-indicatorSeparator {
+    background-color: white !important;
+    display: none;
+}
+.css-yk16xz-control:hover{
+    border-color: #0057ff !important;
+}
+
+.css-yk16xz-control:focus{
+    border-color: #0057ff !important;
+}
+.css-yk16xz-control {
+    background-color: white !important;
+    border-radius: 10px !important;
+    min-height: 40px !important;
+}
+
+.css-1wa3eu0-placeholder {
+    color: hsl(0, 0%, 50%);
+    display: none !important;
+}
+
+
+.css-1pahdxg-control {
+    border-color: #D8D8D8 !important;
+    border-radius: 10px !important;
+    min-height: 40px !important;
+
+}
+
+.css-1pahdxg-control:hover{
+    border-color: #D8D8D8 !important;
+
+}

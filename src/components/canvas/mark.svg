@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11.886" height="20.8" viewBox="0 0 11.886 20.8">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Zap" d="M0,11.886,8.914,0,6.389,8.914h5.5L2.971,20.8,5.5,11.886" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" y1="1" x2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff67a7"/>
+      <stop offset="1" stop-color="#fd8762"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_128" data-name="Group 128" transform="translate(-6.5 -2.6)">
+    <g id="Group_67" data-name="Group 67" transform="translate(6.5 2.6)">
+      <path id="Zap-2" data-name="Zap" d="M0,11.886,8.914,0,6.389,8.914h5.5L2.971,20.8,5.5,11.886" fill="none"/>
+      <g id="Mask_Group_356" data-name="Mask Group 356" clip-path="url(#clip-path)">
+        <g id="Color" transform="translate(-6.5 -2.6)">
+          <rect id="Rectangle" width="26" height="26" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

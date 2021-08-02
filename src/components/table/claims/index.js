@@ -2,7 +2,7 @@ import React, { useEffect,useState }  from 'react'
 import { Card, Table,Row,Col,Input, Button,DatePicker } from 'antd';
 import reqwest from 'reqwest';
 import axios from 'axios'
-import { Select, Radio } from 'antd';
+import { Select } from 'antd';
 import ImportIcon from './Icon.png'
 import ExportIcon from './export.png'
 import './style.css'
@@ -14,57 +14,57 @@ const columns = [
   {
     title: 'DD USER',
     // dataIndex: 'first_name',
-    render: x => `${x.personal_info.first_name} `,
+    render: x => `${x.personal_info.first_name} `
   },
   {
     title: 'DD Claim #',
     // dataIndex: 'first_name',
-    render: x => `${x.dd_claim_number} `,
+    render: x => `${x.dd_claim_number} `
   },
   {
     title: 'TPA Claim #',
     // dataIndex: 'first_name',
-    render: x => `${x.insurance_claim_number} `,
+    render: x => `${x.insurance_claim_number} `
   },
   {
     title: 'FIRST NAME',
     // dataIndex: 'first_name',
-    render: x => `${x.personal_info.first_name} `,
+    render: x => `${x.personal_info.first_name} `
   },
   {
     title: 'LAST NAME',
     // dataIndex: 'first_name',
-    render: x => `${x.personal_info.last_name} `,
+    render: x => `${x.personal_info.last_name} `
   },
   {
     title: 'CITY',
     // dataIndex: 'first_name',
-    render: x => `${x.personal_info.city} `,
+    render: x => `${x.personal_info.city} `
   },
   {
     title: 'ST',
     // dataIndex: 'first_name',
-    render: x => `${x.personal_info.state} `,
+    render: x => `${x.personal_info.state} `
   },
   {
     title: 'ZIP',
     // dataIndex: 'first_name',
-    render: x => `${x.personal_info.zip_code} `,
+    render: x => `${x.personal_info.zip_code} `
   },
   {
     title: 'PHONE 1',
     // dataIndex: 'first_name',
-    render: x => `${x.personal_info.phone} `,
+    render: x => `${x.personal_info.phone} `
   },
   {
     title: 'PHONE 2',
     // dataIndex: 'first_name',
-    render: x => `${x.personal_info.secondary_phone} `,
+    render: x => `${x.personal_info.secondary_phone} `
   },
   {
     title: 'EMAIL',
     // dataIndex: 'first_name',
-    render: x => `${x.personal_info.email} `,
+    render: x => `${x.personal_info.email} `
   },
  ,
 ];
@@ -73,9 +73,9 @@ const columns = [
 
 const TableComponent = () => {
   const [data,setData] = useState([])
-  const [filerData,setFilterData] = useState([])
   const [show,setShow] = useState({})
-  const [fromDate,setFromDate] = useState(null)
+  const [filerData,setFilterData] = useState([]);
+  const [fromDate,setFromDate] = useState(null);
   const [pagination,setPagination] = useState({
     current: 1,
     pageSize: 10,
@@ -89,8 +89,6 @@ const TableComponent = () => {
 
   const handleCategoryStatus = (value,params={}) =>{
     setLoading(true);
-    console.log(value)
-
     reqwest({
       url: 'http://localhost:8080/api/claim/getClaim',
       method: 'get',
@@ -99,7 +97,6 @@ const TableComponent = () => {
         status: value,
       },
     }).then(data => {
-      console.log(data);
       setLoading(false)
       setData(data)
       setPagination({
@@ -110,7 +107,7 @@ const TableComponent = () => {
   }
   const handleCategoryType = (value,params={}) =>{
     setLoading(true);
-    console.log(value)
+
 
     reqwest({
       url: 'http://localhost:8080/api/claim/getClaimBasedOnType',
@@ -120,7 +117,7 @@ const TableComponent = () => {
         type: value
       },
     }).then(data => {
-      console.log(data);
+
       setLoading(false)
       setData(data)
       setPagination({
@@ -131,12 +128,10 @@ const TableComponent = () => {
   }
 
   const handleFromDate = (value) =>{
-    console.log(value)
     setFromDate(value.value)
   }
 
   const handleToDate = (value,params={}) =>{
-    console.log(value)
     setLoading(true);
     reqwest({
       url: `http://localhost:8080/api/claim/getClaimByDate?date1=${fromDate}$date2=${value}`,
@@ -147,7 +142,6 @@ const TableComponent = () => {
         current: params.current
       },
     }).then(data => {
-      console.log(data);
       setLoading(false)
       setData(data)
       setPagination({
@@ -180,7 +174,6 @@ const TableComponent = () => {
         current: 4,
       },
     }).then(data => {
-      console.log(data);
       setLoading(false)
       setData(data)
       setFilterData(data)
@@ -205,7 +198,7 @@ const TableComponent = () => {
           `http://localhost:8080/api/claim/searchByClaimNumber?search=${e.target.value}`,
           { cancelToken: cancelToken.token } //Pass the cancel token to the current request
         )
-        console.log("--->",results);
+
         setLoading(false)
         setData(results.data)
         setPagination({

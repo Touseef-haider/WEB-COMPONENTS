@@ -5,9 +5,6 @@ import Arrow from './drop-down-arrow.svg'
 import axios from 'axios';
 import './style.css'
 
-let names = []
-
-
 const filterNames = (inputValue) => {
     return axios.get(`http://localhost:8080/api/tpa/search?search=${inputValue}`).then(res=>{
         return res.data

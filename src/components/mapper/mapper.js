@@ -23,7 +23,7 @@ const Mapper = () => {
         this.Sprite = new Image();
         this.Sprite.src = `${Mark}`
         this.Width = 12;
-        this.Height = 20;
+        this.Height = 15;
         this.XPos = 0;
         this.YPos = 0;
     }
@@ -33,7 +33,7 @@ const Mapper = () => {
 
     // When the user clicks their mouse on our canvas run this code
     var mouseClicked = function (area,index,mouse) {
-        console.log("mouse",area)
+        console.log("area",area)
         let c = document.querySelector('canvas')
         // Get corrent mouse coords
         var rect = c.getBoundingClientRect();
@@ -76,20 +76,6 @@ const Mapper = () => {
             // Draw marker
             context.drawImage(tempMarker.Sprite, tempMarker.XPos, tempMarker.YPos, tempMarker.Width, tempMarker.Height);
 
-            // Calculate position text
-            var markerText = "";
-
-
-            // Draw a simple box so you can see the position
-            var textMeasurements = context.measureText(markerText);
-            context.fillStyle = "#666";
-            context.globalAlpha = 0.7;
-            context.fillRect(tempMarker.XPos - (textMeasurements.width / 2), tempMarker.YPos - 15, textMeasurements.width, 20);
-            context.globalAlpha = 1;
-
-            // Draw position above
-            context.fillStyle = "#000";
-            context.fillText(markerText, tempMarker.XPos, tempMarker.YPos);
         }
     };
 
@@ -122,7 +108,6 @@ const Mapper = () => {
                     width={616}
                     map={MAP}
                     containerRef={mapperRef} 
-                    onImageClick={evt => clickedOutside(evt)}
                     onClick={(area,index,event)=>mouseClicked(area,index,event)}  
                 /> 
             </div>

@@ -12,7 +12,7 @@ function App() {
     // <Division>
     <div style={{margin:'0px auto',width:'70%'}}>
       {/* <TPA/> */}
-      <TableComponent/>
+      {/* <TableComponent/> */}
       {/* <Users/> */}
       <Mapper/>
     </div>

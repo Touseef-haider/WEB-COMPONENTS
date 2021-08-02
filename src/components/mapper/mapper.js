@@ -3,26 +3,19 @@ import Car from './car.png'
 import Mark from './mark.svg'
 import ImageMapper from 'react-image-mapper';
 import Area from './area.json'
+import Users from '../table/User/index'
+
 
 const Mapper = () => {
-    
-
-
-
-    
     // Map sprite
     var mapSprite = new Image();
     mapSprite.src = `${Car}`;
-
-    
-
-
 
     // Create a basic class which will be used to create a marker
     let Marker = function () {
         this.Sprite = new Image();
         this.Sprite.src = `${Mark}`
-        this.Width = 12;
+        this.Width = 10;
         this.Height = 15;
         this.XPos = 0;
         this.YPos = 0;
@@ -35,7 +28,7 @@ const Mapper = () => {
     var mouseClicked = function (area,index,mouse) {
         console.log("area",area)
         let c = document.querySelector('canvas')
-        // Get corrent mouse coords
+        // Get current mouse coords
         var rect = c.getBoundingClientRect();
         var mouseXPos = (mouse.pageX - rect.left);
         var mouseYPos = (mouse.pageY - rect.top);
@@ -44,6 +37,7 @@ const Mapper = () => {
         var marker = new Marker();
         marker.XPos = mouseXPos - (marker.Width / 2);
         marker.YPos = mouseYPos - marker.Height;
+       
 
         // Push our new marker to our Markers array
         Markers.push(marker);
@@ -58,17 +52,9 @@ const Mapper = () => {
 
 
     var draw = function () {
-        // Clear Canvas
-        // context.fillStyle = "#000";
-        // context.fillRect(0, 0, canvas.width, canvas.height);
+
         let c = document.querySelector('canvas')
         let context = c.getContext('2d')
-
-
-        // Draw map
-        // Sprite, X location, Y location, Image width, Image height
-        // You can leave the image height and width off, if you do it will draw the image at default size
-        context.drawImage(mapSprite, 0, 0, mapSprite.width, mapSprite.height);
 
         // Draw markers
         for (var i = 0; i < Markers.length; i++) {
@@ -81,41 +67,20 @@ const Mapper = () => {
 
     
     setInterval(main, (1000 / 60)); // Refresh 60 times a second
-
-    const mapperRef = React.useRef(null);   
     const MAP = {
         name: 'Canvas',
         areas: Area,
     };
-
-    
-
-    
-
-
-    
-    const clickedOutside = (e) =>{
-        console.log({x:e.pageX,y:e.pageY})
-    }
-
-    
     
     return (
-        <>      
-            <div style={{position:'absolute',zIndex:'1'}} >
-                <ImageMapper
-                    src={Car}
-                    width={616}
-                    map={MAP}
-                    containerRef={mapperRef} 
-                    onClick={(area,index,event)=>mouseClicked(area,index,event)}  
-                /> 
-            </div>
-            
-        
-
-            
-
+        <>  
+            {/* <Users/> */}
+            <ImageMapper
+                src={Car}
+                width={616}
+                map={MAP}
+                onClick={(area,index,event)=>mouseClicked(area,index,event)}  
+            /> 
         </>
     )
 

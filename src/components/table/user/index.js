@@ -35,8 +35,8 @@ const Users = () => {
   const [filerData,setFilterData] = useState([])
   const [show,setShow] = useState({})
   const [pagination,setPagination] = useState({
-    current: 1,
-    pageSize: 10,
+    current: 10,
+    pageSize: 1,
   })
   const [loading,setLoading] = useState(false)
   
@@ -64,10 +64,10 @@ const Users = () => {
       url: 'http://localhost:8080/api/profile/getProfiles',
       method: 'get',
       type: 'json',
-      // data:  {
-      //   pageSize: params.pageSize,
-      //   current: params.current,
-      // },
+      data:  {
+        pageSize: params.pageSize,
+        current: params.current,
+      },
     }).then(data => {
       console.log(data);
       setLoading(false)

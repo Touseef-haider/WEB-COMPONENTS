@@ -15,10 +15,10 @@ function App() {
     <div style={{margin:'0px auto',width:'70%'}}>
       {/* <TPA/> */}
       {/* <TableComponent/> */}
-      {/* <Users/> */}
+      <Users/>
       {/* <Mapper/> */}
       {/* <UISelect/> */}
-      <Example/>
+      {/* <Example/> */}
     </div>
     // </Division>
   );

@@ -4,6 +4,7 @@ import Map from './components/canvas/index'
 import TPA from './components/table/tpa/index'
 import TableComponent from './components/table/claims/index'
 import Users from './components/table/User/index'
+import UISelect from './components/select-ui'
 import './App.css'
 // import Division from './components/table/styles'
 
@@ -14,7 +15,8 @@ function App() {
       {/* <TPA/> */}
       {/* <TableComponent/> */}
       {/* <Users/> */}
-      <Mapper/>
+      {/* <Mapper/> */}
+      <UISelect/>
     </div>
     // </Division>
   );

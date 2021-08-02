@@ -3,7 +3,7 @@ import Car from './car.png'
 import Mark from './mark.svg'
 import ImageMapper from 'react-image-mapper';
 import Area from './area.json'
-import Users from '../table/User/index'
+
 
 
 const Mapper = () => {
@@ -74,7 +74,7 @@ const Mapper = () => {
     
     return (
         <>  
-            {/* <Users/> */}
+
             <ImageMapper
                 src={Car}
                 width={616}

@@ -13,7 +13,6 @@ const filterNames = (inputValue) => {
     })
 };
 
-// asda
 const promiseOptions = inputValue =>{
     return new Promise(resolve => {
       setTimeout(() => {
@@ -45,6 +44,7 @@ const UISelect = (props) => {
         components={{ DropdownIndicator }}
         cacheOptions
         options={options}
+        maxMenuHeight={250}
         defaultOptions
         getOptionValue={options => options._id}
         getOptionLabel={(options) => options.name}

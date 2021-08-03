@@ -5,7 +5,7 @@ import TPA from './components/table/tpa/index'
 import TableComponent from './components/table/claims/index'
 import Users from './components/table/User/index'
 import UISelect from './components/select-ui'
-import Example from './components/select-ui/another'
+import Example from './components/select-ui/reactSelect'
 import './App.css'
 // import Division from './components/table/styles'
 

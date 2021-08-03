@@ -14,6 +14,7 @@ const filterNames = (inputValue) => {
 };
 
 const promiseOptions = inputValue =>{
+    console.log(inputValue)
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(filterNames((inputValue)))

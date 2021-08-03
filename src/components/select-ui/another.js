@@ -4,12 +4,13 @@ import axios from 'axios'
 import CustomSelect from "./custom-select";
 
 const Example = () => {
-  const [data,setData] = useState([])
-  const [fetchingData,setFetchingData] = useState(false)
-  const [selectedOption,setselectedOption] = useState("")
-  
+  const [data,setData] = useState([]);
+  const [fetchingData,setFetchingData] = useState(false);
+  const [selectedOption,setselectedOption] = useState("");
+  let [current,setCurrent] = useState(1);
+
   useEffect(()=>{
-    axios.get(`http://localhost:8080/api/tpa?current=${1}`).then(res=>{
+    axios.get(`http://localhost:8080/api/tpa?current=${current}`).then(res=>{
         setData(res.data)      
     }).catch(err=>{
         console.log(err)
@@ -20,7 +21,7 @@ const Example = () => {
   const changeOptionsData = () => {
     setFetchingData(true)
     setTimeout(() => {
-        axios.get(`http://localhost:8080/api/tpa?current=${5}`).then(res=>{
+        axios.get(`http://localhost:8080/api/tpa?current=${current+4}`).then(res=>{
             console.log(res.data)
             setData(res.data)      
         }).catch(err=>{
@@ -31,10 +32,7 @@ const Example = () => {
   };
   
 const filterNames = (inputValue) => {
-    console.log(inputValue)
     return axios.get(`http://localhost:8080/api/tpa/search?search=${inputValue}`).then(res=>{
-        console.log(res.data)
-        // setData(res.data)
         return res.data
     }).catch(err=>{
         console.log(err)
@@ -42,7 +40,6 @@ const filterNames = (inputValue) => {
 };
 
   const promiseOptions = inputValue =>{
-    console.log(inputValue)
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(filterNames((inputValue)))
@@ -60,13 +57,10 @@ const filterNames = (inputValue) => {
       
         <CustomSelect
           options={data}
-          getOptionValue={data => data._id}
-          getOptionLabel={(data) => data.name}
           changeOptionsData={changeOptionsData}
           fetchingData={fetchingData}
           onChange={handleChange}
           loadOptions={promiseOptions} 
-
         />
       </div>
     );

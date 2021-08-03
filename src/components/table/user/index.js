@@ -1,13 +1,10 @@
 import React, { useEffect,useState }  from 'react'
-import { Card, Table,Row,Col,Input, Button,DatePicker } from 'antd';
+import { Card, Table,Row,Col, Button } from 'antd';
 import reqwest from 'reqwest';
 import axios from 'axios'
-import { Select, Radio } from 'antd';
+import { Select } from 'antd';
 import './style.css'
-import { SearchOutlined } from '@ant-design/icons'
-import { useQuery } from 'react-query';
 
-const { Option } = Select;
 
 const columns = [
   {
@@ -69,14 +66,14 @@ const Users = () => {
         current: params.current,
       },
     }).then(data => {
-      console.log(data);
+
       setLoading(false)
       setData(data)
       setFilterData(data)
 
       setPagination({
           ...params.pagination,
-          total:100
+          total:data.length
       })
 
         
@@ -95,7 +92,6 @@ const Users = () => {
           `http://localhost:8080/api/tpa/search?search=${e.target.value}`,
           { cancelToken: cancelToken.token } //Pass the cancel token to the current request
         )
-        console.log("--->",results);
         setLoading(false)
         setData(results.data)
         setPagination({

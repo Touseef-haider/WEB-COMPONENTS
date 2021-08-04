@@ -53,7 +53,7 @@ const CustomSelect = ({
     <div>
       <AsyncSelect
         defaultOptions={options}
-        components={{ Menu, Option ,DropdownIndicator}}
+        components={{ Menu, Option,DropdownIndicator }}
         fetchingData={fetchingData}
         changeOptionsData={changeOptionsData}
         onChange={onChange}

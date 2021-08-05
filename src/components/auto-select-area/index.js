@@ -30,7 +30,12 @@ const AreaSelect = () => {
             
             let lat = results[0].geometry.location.lat()
             let lng = results[0].geometry.location.lng()
-            // axios.get(`http://api.positionstack.com/v1/forward?access_key=23a79690702e249ff6040ba352164558chore
+            axios.get(`http://api.positionstack.com/v1/forward?access_key=23a79690702e249ff6040ba352164558&query=${lat},${lng}`).then(res=>{
+                console.log(res)
+            })
+            .catch(err=>{
+                console.log(err)
+            })
             console.log({lat,lng})
         })
         .catch(error => console.error(error));
